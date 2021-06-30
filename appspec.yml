@@ -4,6 +4,10 @@ files:
   - source: .
     destination: /home/ec2-user/spring-boot-mongo/
 hooks:
+  BeforeInstall:
+   - location: cleanup.sh
+     timeout: 300
+     runas: root
   AfterInstall:
    - location: setup.sh
      timeout: 300
